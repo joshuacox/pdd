@@ -156,7 +156,7 @@
           "vendor/cookbooks"
         ],
         "roles_path": "chef/roles",
-        "run_list": ["role[vdd]"],
+        "run_list": ["role[drupal]"],
         "prevent_sudo": false,
         "skip_install": false
     }
