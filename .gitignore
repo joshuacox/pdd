@@ -6,3 +6,4 @@ packer/vendor/
 
 # For built boxes
 *.box
+builds/
