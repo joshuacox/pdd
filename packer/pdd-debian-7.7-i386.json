@@ -165,7 +165,7 @@
     {
       "type": "vagrant",
       "only": ["virtualbox-iso"],
-      "output": "../builds/vagrant/opscode_debian-7.7-i386_chef-{{user `chef_version`}}.box"
+      "output": "../builds/vagrant/pdd_debian-7.7-i386_chef-{{user `chef_version`}}.box"
     }
   ],
   "provisioners": [
