@@ -24,7 +24,7 @@
         "<enter><wait>"
       ],
       "boot_wait": "10s",
-      "disk_size": 40960,
+      "disk_size": 5960,
       "guest_os_type": "Debian",
       "http_directory": "http",
       "iso_checksum": "ca22b069189ab6b7a1f931ee64c7a2a81ac73c99",
@@ -64,7 +64,7 @@
         "<enter><wait>"
       ],
       "boot_wait": "10s",
-      "disk_size": 40960,
+      "disk_size": 5960,
       "accelerator": "kvm",
       "headless": "true",
       "http_directory": "http",
@@ -99,7 +99,7 @@
         "<enter><wait>"
       ],
       "boot_wait": "10s",
-      "disk_size": 40960,
+      "disk_size": 5960,
       "guest_os_type": "debian5",
       "http_directory": "http",
       "iso_checksum": "ac7abf86a6077a242ac367aef3d4f18a8232098b",
@@ -139,7 +139,7 @@
         "<enter><wait>"
       ],
       "boot_wait": "10s",
-      "disk_size": 40960,
+      "disk_size": 5960,
       "guest_os_type": "debian",
       "http_directory": "http",
       "iso_checksum": "24e8e0ac74a12848e2601f3bb1821c52fc9049c5",
@@ -175,10 +175,7 @@
         "scripts/debian/update.sh",
         "scripts/common/sshd.sh",
         "scripts/debian/networking.sh",
-        "scripts/debian/sudoers.sh",
-        "scripts/common/chef.sh",
-        "scripts/debian/cleanup.sh",
-        "scripts/common/minimize.sh"
+        "scripts/debian/sudoers.sh"
       ],
       "type": "shell",
       "environment_vars": [ "CHEF_VERSION={{user `chef_version`}}" ]
@@ -191,6 +188,16 @@
       ],
       "type": "shell",
       "only": ["virtualbox-iso"],
+      "environment_vars": [ "CHEF_VERSION={{user `chef_version`}}" ]
+    },
+    {
+      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
+      "scripts": [
+        "scripts/common/chef.sh",
+        "scripts/debian/cleanup.sh",
+        "scripts/common/minimize.sh"
+      ],
+      "type": "shell",
       "environment_vars": [ "CHEF_VERSION={{user `chef_version`}}" ]
     },
     {
