@@ -36,7 +36,6 @@ parallels-iso|parallels-pvm)
 qemu|qemu-kvm)
     mkdir /tmp/qemu
     rmdir /tmp/qemu
-    rm /home/vagrant/*.iso
     ;;
 
 *)
